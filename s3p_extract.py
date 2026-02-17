@@ -126,7 +126,7 @@ def convert(path: Path) -> None:
 
             for i, (offset, length) in enumerate(ENTRY_STRUCT.iter_unpack(entries_region), start=1):
                 print(f"{(i / entries_count) * 100:.2f}%")
-                out_file = out_dir / f"{i - 1}.wav"
+                out_file = out_dir / f"{i:04d}.wav"
                 _extract_one(mm, offset, length, out_file)
 
 
